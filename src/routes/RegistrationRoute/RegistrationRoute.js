@@ -4,7 +4,7 @@ import RegistrationForm from '../../components/RegistrationForm/RegistrationForm
 class RegistrationRoute extends Component {
   static defaultProps = {
     history: {
-      push: () => {},
+      push: () => { },
     },
   }
 
@@ -17,7 +17,7 @@ class RegistrationRoute extends Component {
     return (
       <section>
         <p>
-          Practice learning a language with the spaced reptition revision technique.
+          Practice learning Latin with the spaced reptition revision technique.
         </p>
         <h2>Sign up</h2>
         <RegistrationForm
