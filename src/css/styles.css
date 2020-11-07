@@ -1,0 +1,152 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+img{
+    width: 90%;
+}
+
+.App{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: var(--font);
+}
+
+a{
+    text-decoration: none;
+    color: var(--colors-white)
+}
+
+header{
+    width: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--colors-accent);
+    color: var(--colors-white);
+    padding: var(--spacer-sm);
+}
+
+footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    color: var(--colors-black);
+    padding: var(--spacer-sm);
+}
+footer a{
+    color: var(--colors-black);
+    text-align: right;
+}
+
+footer .icon{
+    color: var(--colors-white);
+    font-size: 30px;
+}
+
+p{
+    padding: var(--spacer-sm) 0;
+    font-size: var(--font-size-sm);
+}
+
+button{
+    cursor: pointer;
+    outline: 0;
+    width: 90px;
+    height: 40px;
+    background-color: var(--colors-accent);
+    color: var(--colors-white);
+    border: 2px solid var(--colors-accent);
+    margin: var(--spacer-sm) 0;
+    padding: 0;
+    font-size: var(--font-size-med);
+    border-radius: 15px;
+}
+
+button:focus{
+    background-color: var(--colors-light);
+    color: var(--colors-accent);
+    border: 2px solid var(--colors-accent);
+}
+
+section{
+    display: flex;
+    flex-direction: column;
+    width: inherit;
+    padding: var(--spacer-lg);
+    justify-content: flex-start;
+    height: inherit;
+    color: var(--colors-black);
+}
+
+nav{
+    font-weight: bold;
+
+    
+}
+nav >*{
+    padding: var(--spacer-sm);
+}
+
+
+/*STYLES FOR FORM ELEMENTS*/
+form{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: var(--spacer-sm);
+}
+
+form div{
+    padding-bottom: var(--spacer-sm);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+input, textarea{
+    flex: 2;
+    width: inherit;
+    height: 2rem;
+    padding: 3px;
+    margin-top: 3px;
+    font-size: var(--font-size-sm);
+    border: 1px solid var(--colors-black);
+    outline: 0;
+}
+
+label{
+    padding-right:6px;
+}
+input:focus, textarea:focus{
+    border: 2px solid var(--colors-accent);
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: var(--font-title);
+}
+
+
+
+
+@media all and (min-width: 500px){
+ header{
+     flex-direction: row;
+     justify-content: space-between;
+ }
+ }
+ 
+ @media all and (min-width: 800px){
+  
+  }

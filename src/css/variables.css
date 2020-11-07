@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Lora:wght@400;600&display=swap');
+
+:root{
+    --colors-accent: #B71c1c;
+    --colors-extreme: #F44336;
+    --colors-black: #212121;
+    --colors-white: #e1f5fe;
+
+    --spacer-sm: 0.8rem;
+    --spacer-med: 1rem;
+    --spacer-lg: 1.2rem;
+
+    --font-size-sm: 14px;
+    --font: "Lato", sans-serif;
+    --font-title: "Lora", serif;
+
+    --bold: 600;
+}
+
+@media all and (min-width: 500px){
+   :root{
+    --spacer-sm: 0.9rem;
+    --spacer-med: 1.1rem;
+    --spacer-lg: 1.3rem;
+
+    --font-size-sm: 16px;
+   } 
+
+}
+
+@media all and (min-width: 800px){
+    :root{
+     --spacer-sm: 1rem;
+     --spacer-med: 1.3rem;
+     --spacer-lg: 1.5rem;
+ 
+     --font-size-sm: 18px;
+    } 
+ 
+ }
