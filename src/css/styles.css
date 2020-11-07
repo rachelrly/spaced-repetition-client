@@ -18,6 +18,10 @@ img{
     font-family: var(--font);
 }
 
+main{
+    height: 100vh;
+}
+
 a{
     text-decoration: none;
     color: var(--colors-white)
@@ -34,7 +38,7 @@ header{
     padding: var(--spacer-sm);
 }
 
-footer{
+.form_footer{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -43,9 +47,20 @@ footer{
     color: var(--colors-black);
     padding: var(--spacer-sm);
 }
-footer a{
+.form_footer a{
     color: var(--colors-black);
     text-align: right;
+}
+
+footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: inherit;
+    height: 50px;
+    background-color: var(--colors-accent);
+    color: var(--colors-white);
+    padding: var(--spacer-sm);
 }
 
 footer .icon{
@@ -104,7 +119,7 @@ form{
     height: 100%;
     width: 100%;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     padding-top: var(--spacer-sm);
 }
