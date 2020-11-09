@@ -1,6 +1,5 @@
 import React, { Fragment, useContext } from 'react'
 import UserContext from '../../contexts/UserContext';
-import '../../css/WordList.css'
 
 function WordList() {
     const user = useContext(UserContext)

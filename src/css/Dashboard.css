@@ -19,3 +19,17 @@
 .count{
     text-align: center;
 }
+.score_wrapper{
+    width: 40%;
+}
+.score{
+    display: flex;
+    justify-content: space-between;
+}
+.dash_container{
+    display: flex;
+    justify-content: space-between;
+}
+h2{
+    padding-bottom: var(--spacer-sm);
+}

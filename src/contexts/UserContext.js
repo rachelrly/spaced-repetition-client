@@ -7,12 +7,14 @@ const UserContext = React.createContext({
   user: {},
   error: null,
   words: [],
+  lang: {},
   setError: () => { },
   clearError: () => { },
   setUser: () => { },
   processLogin: () => { },
   processLogout: () => { },
-  setWords: () => { }
+  setWords: () => { },
+  setLang: () => { }
 })
 
 export default UserContext
@@ -23,7 +25,8 @@ export class UserProvider extends Component {
     const state = {
       user: {},
       words: [],
-      error: null
+      error: null,
+      lang: {}
     }
 
     const jwtPayload = TokenService.parseAuthToken()
@@ -32,8 +35,9 @@ export class UserProvider extends Component {
       state.user = {
         id: jwtPayload.user_id,
         name: jwtPayload.name,
-        username: jwtPayload.sub,
+        username: jwtPayload.sub
       }
+    //add total score to jwtPayload and user object
 
     this.state = state;
     IdleService.setIdleCallback(this.logoutBecauseIdle)
@@ -68,6 +72,10 @@ export class UserProvider extends Component {
 
   setWords = words => {
     this.setState({ words })
+  }
+
+  setLang = lang => {
+    this.setState({ lang })
   }
 
 
@@ -114,11 +122,13 @@ export class UserProvider extends Component {
   }
 
   render() {
-    console.log(this.state.words)
+    console.log(this.state.lang)
     const value = {
       user: this.state.user,
       error: this.state.error,
       words: this.state.words,
+      lang: this.state.lang,
+      setLang: this.setLang,
       setError: this.setError,
       clearError: this.clearError,
       setUser: this.setUser,
