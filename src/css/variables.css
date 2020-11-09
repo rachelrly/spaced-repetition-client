@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&family=Lora:wght@400;600&display=swap');
 
 :root{
-    --colors-accent: #B71c1c;
+    --colors-accent: #a5d6a7;
     --colors-extreme: #F44336;
-    --colors-black: #212121;
-    --colors-white: #f5f5f5;
+    --colors-white: #212121;
+    --colors-black: #f5f5f5;
 
     --spacer-sm: 0.8rem;
     --spacer-med: 1rem;

@@ -14,7 +14,7 @@ class Header extends Component {
     return (
       <div>
         <span>
-          Welcome {this.context.user.name}
+          {this.context.user.name}
         </span>
         <nav>
           <Link
@@ -32,7 +32,7 @@ class Header extends Component {
       <nav>
         <Link to='/login'>Login</Link>
         {' '}
-        <Link to='/register'>Sign up</Link>
+        <Link to='/register' className='signup_link'>Sign up</Link>
       </nav>
     )
   }

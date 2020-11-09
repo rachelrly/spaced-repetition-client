@@ -1,4 +1,5 @@
 import React, { Fragment, useContext } from 'react'
+import { Link } from 'react-router-dom';
 import UserContext from '../../contexts/UserContext';
 
 function WordList() {
@@ -6,19 +7,21 @@ function WordList() {
 
     return (
         <Fragment>
-            <h3>Words to practice</h3>
-            <div className='list_wrapper'>
-                <div className='list'>
-                    <p className='word_stat list_latin_word'>Word</p>
-                    <p className='word_stat count correct_count'>Correct</p>
-                    <p className='word_stat count correct_count'>Incorrect</p>
-                </div>
-                {user.words.map(w => (<div className='list' key={w.id}>
-                    <p className='word_stat list_latin_word'>{w.original}</p>
-                    <p className='word_stat count correct_count'>{w.correct_count}</p>
-                    <p className='word_stat count incorrect_count'>{w.incorrect_count}</p>
-                </div>))}
+            <div className='list_title_wrapper'>
+                <h3>Words to practice</h3>
+                <Link to='/learn'>
+                    <button className='practice'>Start practicing</button>
+                </Link>
             </div>
+
+            <ul className='list_wrapper'>
+                {user.words.map((w, index) => (
+                    <li className='list' key={index}>
+                        <h4 className='word_stat list_latin_word'>{w.original}</h4>
+                        <p className='word_stat count correct_count'>correct answer count: {w.correct_count}</p>
+                        <p className='word_stat count incorrect_count'>incorrect answer count: {w.incorrect_count}</p>
+                    </li>))}
+            </ul>
         </Fragment>
     )
 }

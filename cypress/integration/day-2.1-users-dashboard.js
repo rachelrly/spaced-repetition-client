@@ -12,7 +12,7 @@
   - I'm given a button/link to start learning
   - I'm shown the total score for guessing words
 */
-describe(`User story: User's dashboard`, function() {
+describe(`User story: User's dashboard`, function () {
   beforeEach(() => {
     cy.server()
       .route({

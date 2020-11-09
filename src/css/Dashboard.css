@@ -1,15 +1,18 @@
 .list_wrapper{
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
     width: inherit;
-    padding: var(--spacer-sm);
+    padding: 0 var(--spacer-sm);
+    width: 75%;
+    align-self: center;
 }
 
 .list{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: var(--spacer-sm);
+    padding-top: var(--spacer-sm);
 }
 
 .word_stat{
@@ -29,6 +32,13 @@
 .dash_container{
     display: flex;
     justify-content: space-between;
+}
+
+.list_title_wrapper{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: var(--spacer-lg);
 }
 h2{
     padding-bottom: var(--spacer-sm);

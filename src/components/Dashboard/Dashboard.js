@@ -3,7 +3,6 @@ import LangApiService from '../../services/lang-api-service';
 import UserContext from '../../contexts/UserContext';
 import '../../css/Dashboard.css';
 import WordList from './WordList';
-import UserScore from './UserScore';
 
 function Dashboard() {
     const user = useContext(UserContext)
@@ -24,7 +23,9 @@ function Dashboard() {
             <div className='dash_container'>
                 <h2>{user.lang.name}</h2>
 
-                <UserScore />
+                <div className='score'>
+                    <p>Total correct answers: {user.lang.total_score}</p>
+                </div>
             </div>
             <WordList />
         </Fragment>
