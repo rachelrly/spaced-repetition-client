@@ -14,7 +14,7 @@ class Header extends Component {
     return (
       <div>
         <span>
-          {this.context.user.name}
+          Welcome {this.context.user.name}
         </span>
         <nav>
           <Link

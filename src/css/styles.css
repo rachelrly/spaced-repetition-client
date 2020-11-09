@@ -19,7 +19,8 @@ img{
 }
 
 main{
-    height: 100vh;
+    min-height: 100vh;
+    width: 100%;
 }
 
 a{
@@ -32,7 +33,7 @@ header{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     background-color: var(--colors-accent);
     color: var(--colors-white);
     padding: var(--spacer-sm);
@@ -105,12 +106,12 @@ section{
 
 nav{
     font-weight: bold;
+    display: flex;
+
 
     
 }
-nav >*{
-    padding: var(--spacer-sm);
-}
+
 
 
 /*STYLES FOR FORM ELEMENTS*/
@@ -162,6 +163,7 @@ h1, h2, h3, h4, h5, h6{
      flex-direction: row;
      justify-content: space-between;
  }
+
  }
  
  @media all and (min-width: 800px){
