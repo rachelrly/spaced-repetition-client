@@ -2,7 +2,6 @@
 
 :root{
     --colors-accent: #a5d6a7;
-    --colors-extreme: #F44336;
     --colors-white: #212121;
     --colors-black: #f5f5f5;
 
@@ -10,7 +9,7 @@
     --spacer-med: 1rem;
     --spacer-lg: 1.2rem;
 
-    --font-size-sm: 14px;
+    --font-size-sm: 16px;
     --font: "Lato", sans-serif;
     --font-title: "Lora", serif;
 

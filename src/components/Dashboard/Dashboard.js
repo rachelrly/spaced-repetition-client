@@ -23,9 +23,9 @@ function Dashboard() {
             <div className='dash_container'>
                 <h2>{user.lang.name}</h2>
 
-                <div className='score'>
-                    <p>Total correct answers: {user.lang.total_score}</p>
-                </div>
+
+                <p>Total correct answers: {user.lang.total_score}</p>
+
             </div>
             <WordList />
         </Fragment>
