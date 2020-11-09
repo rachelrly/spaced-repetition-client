@@ -4,7 +4,7 @@ import { SiGithub, SiLinkedin } from 'react-icons/si'
 function Footer() {
     return (
         <footer>
-            <p>Rachel Reilly | 2020</p>
+            <span>Rachel Reilly | 2020</span>
             <a href='https://github.com/Rachanastasia'>
                 <SiGithub className='icon' />
             </a>
