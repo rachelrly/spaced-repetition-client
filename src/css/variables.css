@@ -3,6 +3,7 @@
 :root{
     --colors-accent: #a5d6a7;
     --colors-white: #212121;
+    --colors-muted: #424242;
     --colors-black: #f5f5f5;
 
     --spacer-sm: 0.8rem;
