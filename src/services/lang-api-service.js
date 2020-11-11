@@ -26,6 +26,22 @@ const LangApiService = {
                     ? res.json().then(e => Promise.reject(e))
                     : res.json();
             })
+    },
+
+    postAnswer(answer) {
+        return fetch(`${config.API_ENDPOINT}/language/guess`, {
+            method: 'POST',
+            headers: {
+                'authorization': `Bearer ${TokenService.getAuthToken()}`
+            },
+            body: JSON.stringify({ answer })
+        })
+            .then(res => {
+                return (!res.ok)
+                    ? res.json().then(e => Promise.reject(e))
+                    : res.json();
+            })
+
     }
 }
 

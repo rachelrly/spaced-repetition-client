@@ -10,7 +10,7 @@ export function Label({ className, ...props }) {
 
 export const Input = React.forwardRef(({ className, ...props }, ref) => {
   return (
-    <input autocomplete='off' className={cx('Input', className)} type='text' ref={ref} {...props} />
+    <input autoComplete='off' className={cx('Input', className)} type='text' ref={ref} {...props} />
   )
 })
 
@@ -24,6 +24,6 @@ export function Required({ className, ...props }) {
 
 export function Textarea({ className, ...props }) {
   return (
-    <textarea autocomplete='off' className={cx('Textarea', className)} {...props} />
+    <textarea autoComplete='off' className={cx('Textarea', className)} {...props} />
   )
 }
