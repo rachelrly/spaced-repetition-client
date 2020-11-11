@@ -4,8 +4,10 @@ import UserContext from '../../contexts/UserContext';
 import '../../css/Dashboard.css';
 import WordList from './WordList';
 
+
 function Dashboard() {
     const user = useContext(UserContext)
+    console.log(user.words)
 
     useEffect(() => {
         LangApiService.getLang()
@@ -13,7 +15,6 @@ function Dashboard() {
                 user.setWords(lang.words)
                 user.setLang(lang.language)
             })
-
             .catch(err => console.log(err, err.message))
     }, [])
 
@@ -22,8 +23,6 @@ function Dashboard() {
         <Fragment>
             <div className='dash_container'>
                 <h2>{user.lang.name}</h2>
-
-
                 <p>Total correct answers: {user.lang.total_score}</p>
 
             </div>

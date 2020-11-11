@@ -1,9 +1,17 @@
-import React, { Fragment, useContext } from 'react'
+import React, { Fragment, useContext, useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import UserContext from '../../contexts/UserContext';
+import LangApiService from '../../services/lang-api-service';
 
 function WordList() {
     const user = useContext(UserContext)
+
+    useEffect(() => {
+        LangApiService.getHead()
+            .then(lang => console.log(lang))
+            .catch(err => console.log(err, err.message))
+    }, [])
+
 
     return (
         <Fragment>

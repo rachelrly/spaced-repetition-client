@@ -1,0 +1,44 @@
+.word_wrapper label{
+    width: inherit;
+    padding: 0;
+    align-self: flex-start;
+}
+
+.word_wrapper button{
+    width: 160px;
+}
+
+
+.word_header p{
+    padding: 0;
+    font-size: 14px;
+}
+
+
+
+.word{
+    font-size: 1.7rem;
+    display: block;
+    margin-bottom: var(--spacer-med);
+    color: var(--colors-accent);
+}
+
+
+
+
+
+
+@media all and (min-width: 600px){
+    .word_header{
+        display: flex;
+        justify-content: space-between;
+    }
+    .word_header p{
+       text-align: right;
+    }
+    
+   
+   
+    }
+    
+   

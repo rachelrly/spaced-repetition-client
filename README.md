@@ -2,7 +2,8 @@
 
 This is a repository for the client.
 
-Live app: [Here]()
+Live app: [Here](https://spaced-repetition-dun.vercel.app/)
+
 Server repository: [Here](https://github.com/Rachanastasia/spaced-repetition-server)
 
 ## Setup
