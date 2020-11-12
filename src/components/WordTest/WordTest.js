@@ -8,12 +8,17 @@ import '../../css/Word.css'
 function WordTest(props) {
     const [word, setWord] = useState({})
     const [answer, setAnswer] = useState('')
+    const [input, setInput] = useState('')
 
     useEffect(() => {
-        LangApiService.getHead()
+        getWord()
+    }, [])
+
+    function getWord() {
+        return LangApiService.getHead()
             .then(lang => setWord(lang))
             .catch(err => console.log(err, err.message))
-    }, [])
+    }
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -21,13 +26,13 @@ function WordTest(props) {
         if (!regex.test(e.target.value)) {
             return null
         }
-        LangApiService.postAnswer(answer.trim().toLowerCase()).then((r) => setAnswer(r.answer))
+        LangApiService.postAnswer(input.trim().toLowerCase()).then((r) => setAnswer(r.answer))
     }
-    console.log(word)
+
     return (
         <Fragment>
             {answer === true || answer === false
-                ? <Response correct={word.answer} bool={answer} setAnswer={(m) => setAnswer(m)} />
+                ? <Response correct={word.answer} bool={answer} setAnswer={(m) => setAnswer(m)} getWord={() => getWord()} />
                 : <Fragment>
                     <div className='word_header'>
                         <div className='word_header_title'>
@@ -45,8 +50,8 @@ function WordTest(props) {
                         <input autoComplete='off'
                             required id='learn-guess-input'
                             type='text'
-                            value={answer}
-                            onChange={(e) => setAnswer(e.target.value)} />
+                            value={input}
+                            onChange={(e) => setInput(e.target.value)} />
                         <button type='submit'>Submit your answer</button>
                     </form>
                 </Fragment>

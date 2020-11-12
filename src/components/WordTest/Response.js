@@ -11,7 +11,7 @@ function Response(props) {
                     <p>The correct answer is {props.correct}</p>
                 </Fragment>}
 
-            <button onClick={() => props.setAnswer(' ')}>Back to question</button>
+            <button onClick={() => props.getWord().then(() => props.setAnswer(' '))}>Next Question</button>
         </div>
     )
 }
