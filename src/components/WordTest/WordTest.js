@@ -7,11 +7,18 @@ import '../../css/Word.css'
 
 function WordTest(props) {
     const [word, setWord] = useState({})
-    const [answer, setAnswer] = useState('')
+    const [answer, setAnswer] = useState(null)
     const [input, setInput] = useState('')
+    const [correctAnswer, setCorrectAnswer] = useState('')
 
     useEffect(() => {
         getWord()
+
+        return () => {
+            setAnswer(null)
+            setInput('')
+            setCorrectAnswer('')
+        }
     }, [])
 
     function getWord() {
@@ -26,14 +33,20 @@ function WordTest(props) {
         if (!regex.test(e.target.value)) {
             return null
         }
-        LangApiService.postAnswer(input.trim().toLowerCase()).then((r) => setAnswer(r.answer))
+        LangApiService.postAnswer(input.trim().toLowerCase())
+            .then((r) => r.json())
+            .then((r) => {
+                setCorrectAnswer(r.answer)
+                setInput('')
+                setAnswer(r.isCorrect)
+            })
+            .catch(err => console.log(err, err.message))
     }
 
     return (
         <Fragment>
-            {answer === true || answer === false
-                ? <Response correct={word.answer} bool={answer} setAnswer={(m) => setAnswer(m)} getWord={() => getWord()} />
-                : <Fragment>
+            {answer === null
+                ? <Fragment>
                     <div className='word_header'>
                         <div className='word_header_title'>
                             <h2>Translate the word:</h2>
@@ -55,6 +68,7 @@ function WordTest(props) {
                         <button type='submit'>Submit your answer</button>
                     </form>
                 </Fragment>
+                : <Response word={word} correct={correctAnswer} bool={answer} setAnswer={(m) => setAnswer(m)} getWord={() => getWord()} />
             }
         </Fragment>
     )

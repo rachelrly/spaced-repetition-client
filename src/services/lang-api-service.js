@@ -36,7 +36,7 @@ const LangApiService = {
                 'content-type': 'application/json',
                 'authorization': `Bearer ${TokenService.getAuthToken()}`
             },
-            body: JSON.stringify({ answer: answer })
+            body: JSON.stringify({ guess: answer })
         })
             .then(res => res)
             .catch(err => console.log(err))
