@@ -4,20 +4,18 @@ function Response(props) {
     console.log(props)
     return (
         <div>
-            <h2>{props.word.nextWord}</h2>
-            {props.bool === true
+            {props.isCorrect
                 ? <Fragment>
-                    <p>That's correct</p>
-                    <p>The translation of {props.word.nextWord} is {props.correct}</p>
+                    <h2>That's right</h2>
+                    <p>The correct translation is {props.answer}</p>
                 </Fragment>
                 : <Fragment>
-                    <p>That is the wrong answer.</p>
-                    <p>The correct answer is {props.correct}</p>
+                    <h2>Not quite</h2>
+                    <p>The correct answer is {props.answer}</p>
                 </Fragment>}
 
             <button onClick={() => {
                 props.setAnswer(null)
-                props.getWord()
             }}>Next</button>
         </div>
     )

@@ -38,7 +38,11 @@ const LangApiService = {
             },
             body: JSON.stringify({ guess: answer })
         })
-            .then(res => res)
+            .then(res =>
+                (!res.ok)
+                    ? res.json().then(e => Promise.reject(e))
+                    : res.json()
+            )
             .catch(err => console.log(err))
     }
 }

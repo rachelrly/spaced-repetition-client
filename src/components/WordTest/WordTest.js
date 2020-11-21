@@ -9,23 +9,23 @@ function WordTest(props) {
     const [word, setWord] = useState({})
     const [answer, setAnswer] = useState(null)
     const [input, setInput] = useState('')
-    const [correctAnswer, setCorrectAnswer] = useState('')
 
+
+    console.log('WORD IN STATE', word)
     useEffect(() => {
-        getWord()
+
+        LangApiService.getHead()
+            .then(lang => {
+                console.log(lang)
+                setWord(lang)
+            })
+            .catch(err => console.log(err, err.message))
 
         return () => {
             setAnswer(null)
             setInput('')
-            setCorrectAnswer('')
         }
     }, [])
-
-    function getWord() {
-        return LangApiService.getHead()
-            .then(lang => setWord(lang))
-            .catch(err => console.log(err, err.message))
-    }
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -33,14 +33,14 @@ function WordTest(props) {
         if (!regex.test(e.target.value)) {
             return null
         }
+
         LangApiService.postAnswer(input.trim().toLowerCase())
-            .then((r) => r.json())
-            .then((r) => {
-                setCorrectAnswer(r.answer)
+            .then(r => {
+                setWord(r)
                 setInput('')
-                setAnswer(r.isCorrect)
+                setAnswer(true)
             })
-            .catch(err => console.log(err, err.message))
+            .catch(err => console.log(err))
     }
 
     return (
@@ -68,7 +68,7 @@ function WordTest(props) {
                         <button type='submit'>Submit your answer</button>
                     </form>
                 </Fragment>
-                : <Response word={word} correct={correctAnswer} bool={answer} setAnswer={(m) => setAnswer(m)} getWord={() => getWord()} />
+                : <Response {...word} setAnswer={(m) => setAnswer(m)} />
             }
         </Fragment>
     )
