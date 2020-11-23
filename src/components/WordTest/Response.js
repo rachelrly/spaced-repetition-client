@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react'
 
 function Response(props) {
-    console.log(props)
     return (
         <div>
             {props.isCorrect

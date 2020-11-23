@@ -129,7 +129,6 @@ export class UserProvider extends Component {
   }
 
   render() {
-    console.log(this.state.lang)
     const value = {
       user: this.state.user,
       error: this.state.error,

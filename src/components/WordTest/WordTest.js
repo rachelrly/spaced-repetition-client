@@ -10,13 +10,10 @@ function WordTest(props) {
     const [answer, setAnswer] = useState(null)
     const [input, setInput] = useState('')
 
-
-    console.log('WORD IN STATE', word)
     useEffect(() => {
 
         LangApiService.getHead()
             .then(lang => {
-                console.log(lang)
                 setWord(lang)
             })
             .catch(err => console.log(err, err.message))

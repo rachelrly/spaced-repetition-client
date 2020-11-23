@@ -7,7 +7,6 @@ import WordList from './WordList';
 
 function Dashboard() {
     const user = useContext(UserContext)
-    console.log(user.words)
 
     useEffect(() => {
         LangApiService.getLang()

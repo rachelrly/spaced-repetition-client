@@ -58,7 +58,7 @@ class LoginForm extends Component {
             ref={this.firstInput}
             id='login-username-input'
             name='username'
-            placeholder='horatia241'
+            placeholder='horatia'
             required
           />
         </div>
