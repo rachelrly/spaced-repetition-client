@@ -6,7 +6,13 @@ import '../../css/Word.css'
 
 
 function WordTest(props) {
-    const [word, setWord] = useState({})
+    const [word, setWord] = useState({
+        nextWord: 'ante',
+        totalScore: 0,
+        wordCorrectCount: 0,
+        wordIncorrectCount: 0
+    })
+    const [lastWord, setLastWord] = useState({})
     const [answer, setAnswer] = useState(null)
     const [input, setInput] = useState('')
 
@@ -24,20 +30,31 @@ function WordTest(props) {
         }
     }, [])
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
         const regex = /^[A-Za-z]+$/
         if (!regex.test(e.target.value)) {
             return null
         }
 
-        LangApiService.postAnswer(input.trim().toLowerCase())
-            .then(r => {
-                setWord(r)
-                setInput('')
-                setAnswer(true)
-            })
-            .catch(err => console.log(err))
+        try {
+            const newWord = await LangApiService.postAnswer(input.trim().toLowerCase())
+            setLastWord({ ...word, input })
+            setWord(newWord)
+            setInput('')
+            setAnswer(true)
+        }
+        catch (error) {
+            console.log(error)
+        }
+    }
+
+    const responseData = {
+        input: lastWord.input,
+        original: lastWord.nextWord,
+        translation: word.answer,
+        totalScore: word.totalScore,
+        isCorrect: word.isCorrect
     }
 
     return (
@@ -65,10 +82,11 @@ function WordTest(props) {
                         <button type='submit'>Submit your answer</button>
                     </form>
                 </Fragment>
-                : <Response {...word} setAnswer={(m) => setAnswer(m)} />
+                : <Response {...responseData} setAnswer={(m) => setAnswer(m)} />
             }
         </Fragment>
     )
 }
+
 
 export default WordTest
