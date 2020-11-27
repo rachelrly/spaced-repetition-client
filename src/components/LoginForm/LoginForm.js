@@ -50,7 +50,7 @@ class LoginForm extends Component {
         <div role='alert'>
           {error && <p>{error}</p>}
         </div>
-        <div>
+        <fieldset>
           <Label htmlFor='login-username-input'>
             Username
           </Label>
@@ -61,8 +61,8 @@ class LoginForm extends Component {
             placeholder='horatia'
             required
           />
-        </div>
-        <div>
+        </fieldset>
+        <fieldset>
           <Label htmlFor='login-password-input'>
             Password
           </Label>
@@ -73,7 +73,7 @@ class LoginForm extends Component {
             placeholder='pass'
             required
           />
-        </div>
+        </fieldset>
         <Button type='submit'>
           Login
         </Button>

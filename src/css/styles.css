@@ -78,7 +78,7 @@ p{
 button{
     cursor: pointer;
     outline: 0;
-    width: 120px;
+    width: 135px;
     height: 35px;
     background-color: var(--colors-accent);
     color: var(--colors-white);
@@ -130,16 +130,17 @@ form{
     padding-top: var(--spacer-sm);
 }
 
-form div{
+fieldset{
     width:100%;
     padding-bottom: var(--spacer-sm);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    outline: 0;
+    border: 0;
 }
 
 input, textarea{
-    flex: 2;
     width: 100%;
     height: 2rem;
     padding: 3px;

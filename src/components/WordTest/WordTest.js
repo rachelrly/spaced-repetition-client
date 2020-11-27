@@ -73,12 +73,14 @@ function WordTest(props) {
                         </div>
                     </div>
                     <form className='word_wrapper' onSubmit={(e) => handleSubmit(e)}>
-                        <label htmlFor='learn-guess-input'>What's the translation for this word?</label>
-                        <input autoComplete='off'
-                            required id='learn-guess-input'
-                            type='text'
-                            value={input}
-                            onChange={(e) => setInput(e.target.value)} />
+                        <fieldset>
+                            <label htmlFor='learn-guess-input'>What's the translation for this word?</label>
+                            <input autoComplete='off'
+                                required id='learn-guess-input'
+                                type='text'
+                                value={input}
+                                onChange={(e) => setInput(e.target.value)} />
+                        </fieldset>
                         <button type='submit'>Submit your answer</button>
                     </form>
                 </Fragment>
